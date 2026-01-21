@@ -14,7 +14,10 @@ if (billRange) {
     billRange.addEventListener('input', function () {
         // Validation
         let bill = parseInt(this.value);
-        document.getElementById('billVal').innerText = bill.toLocaleString();
+        const displayEl = document.getElementById('billValDisplay');
+        if (displayEl) {
+            displayEl.innerText = "₹ " + bill.toLocaleString();
+        }
 
         // Logic: Annual Savings = (Monthly Bill * 12) * 0.90 (90% offset)
         let annual = (bill * 12) * 0.9;
