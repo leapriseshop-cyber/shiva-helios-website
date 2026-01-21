@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Portfolio & Clients | Shiva Helios Power System</title>
+    <meta name="description"
+        content="View our portfolio of 1000+ Solar Projects including Tata Power, Nalwa Steel, and Indian Railways. We are trusted by top brands like Adani and Waaree.">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/favicon.png" alt="Shiva Helios Logo">
+                <span>SHIVA HELIOS</span>
+            </a>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="maintenance.html">O&M</a></li>
+                <li><a href="contact.html" class="btn btn-primary" style="color: black;">Get Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <span class="hero-badge">1000+ Installations</span>
+            <h1>Our <span class="highlight">Success Stories</span></h1>
+            <p>Driving sustainable growth across India with trusted engineering.</p>
+        </div>
+    </header>
+
+    <!-- Key Stats -->
+    <section style="padding: 0 0 4rem;">
+        <div class="container">
+            <div class="grid" style="text-align: center;">
+                <div class="card reveal-up">
+                    <h2 class="text-primary" style="font-size: 3rem; margin-bottom: 0;">200+</h2>
+                    <p>Commercial Projects</p>
+                </div>
+                <div class="card reveal-up">
+                    <h2 class="text-secondary" style="font-size: 3rem; margin-bottom: 0;">3000+</h2>
+                    <p>Tons CO2 Reduced</p>
+                </div>
+                <div class="card reveal-up">
+                    <h2 class="text-primary" style="font-size: 3rem; margin-bottom: 0;">500+</h2>
+                    <p>Satisfied Residential Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Gallery -->
+    <section class="portfolio-gallery">
+        <div class="container reveal-up">
+            <h2 class="section-title">Project <span class="text-primary">Highlights</span></h2>
+            <div class="grid">
+                <!-- Using existing high-quality assets to represent categories -->
+                <div class="card">
+                    <img src="images/hero_bg.png" alt="Industrial Solar Rooftop" class="prod-img">
+                    <div class="card-content">
+                        <h3>Industrial & Captive</h3>
+                        <p>Powering heavy industries like Nalwa Steel (2.5MW) & TC Spinner.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/substation.png" alt="Ground Mount / Substation" class="prod-img">
+                    <div class="card-content">
+                        <h3>Utility & Solar Parks</h3>
+                        <p>Large-scale grids like Kukus Solar Park (2.5MW) & Bando Village (5MW).</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/residential.png" alt="Residential Solar Rooftop" class="prod-img">
+                    <div class="card-content">
+                        <h3>Residential & Housing</h3>
+                        <p>500+ Satisfied Homeowners across Delhi NCR & UP.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/epc_team.png" alt="Engineering Team" class="prod-img">
+                    <div class="card-content">
+                        <h3>Govt & Institutional</h3>
+                        <p>Trusted by NIA, Indian Oil, and Universities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project List -->
+    <section class="portfolio-list">
+        <div class="container reveal-up">
+            <h2 class="section-title">Complete <span class="text-primary">Project Record</span></h2>
+            <div class="project-table-container">
+                <table class="project-table">
+                    <thead>
+                        <tr>
+                            <th>Client Name</th>
+                            <th>Capacity</th>
+                            <th>Location</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Mega Projects (MW Scale) -->
+                        <tr class="highlight-row">
+                            <td><strong>Bando Village</strong></td>
+                            <td class="text-primary">5000 KW</td>
+                            <td>Mohba</td>
+                            <td>Utility Scale (Ground Mount)</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>TC Spinner</strong></td>
+                            <td class="text-primary">2500 KW</td>
+                            <td>Ambala, Punjab</td>
+                            <td>Industrial (Mega Scale)</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Nalwa Special Steels</strong></td>
+                            <td class="text-primary">2500 KW</td>
+                            <td>Raigarh, Chhattisgarh</td>
+                            <td>Industrial (Captive)</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Solar Park Kukus</strong></td>
+                            <td class="text-primary">2500 KW</td>
+                            <td>Jaipur, Rajasthan</td>
+                            <td>Ground Mount</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>RK Marble</strong></td>
+                            <td class="text-primary">1000 KW</td>
+                            <td>Udaipur, Rajasthan</td>
+                            <td>Industrial</td>
+                            <td>Completed</td>
+                        </tr>
+
+                        <!-- Industrial & Govt -->
+                        <tr>
+                            <td><strong>Chandpur Enterprises</strong></td>
+                            <td class="text-primary">800 KW</td>
+                            <td>Bijnor, Uttar Pradesh</td>
+                            <td>Industrial</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sanskar University</strong></td>
+                            <td class="text-primary">600 KW</td>
+                            <td>Delhi NCR</td>
+                            <td>Institutional</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Northern Frontier Railway</strong></td>
+                            <td class="text-primary">600 KW</td>
+                            <td>Guwahati, Assam</td>
+                            <td>Railways / Govt</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Indian Oil Corp (IOCL)</strong></td>
+                            <td class="text-primary">500 KW</td>
+                            <td>Dibrugarh, Assam</td>
+                            <td>PSU (Ground/Canopy)</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>National Investigation Agency</strong></td>
+                            <td class="text-primary">500 KW</td>
+                            <td>Raipur, Chhattisgarh</td>
+                            <td>Government</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mohan Cold Storage</strong></td>
+                            <td class="text-primary">200 KW</td>
+                            <td>Bulandshahr, UP</td>
+                            <td>Cold Storage / Commercial</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kotputli Eklavya College</strong></td>
+                            <td class="text-primary">150 KW</td>
+                            <td>Kotputli, Rajasthan</td>
+                            <td>Educational Institute</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rama Medical College</strong></td>
+                            <td class="text-primary">500 KW</td>
+                            <td>Pilkhuwa, Hapur</td>
+                            <td>Institutional</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fatehgarh Sahib Gurudwara</strong></td>
+                            <td class="text-primary">400 KW</td>
+                            <td>Punjab</td>
+                            <td>Religious / Trust</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Infinity Palwal</strong></td>
+                            <td class="text-primary">350 KW</td>
+                            <td>Palwal, Haryana</td>
+                            <td>Industrial</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>National Investigation Agency</strong></td>
+                            <td class="text-primary">250 KW</td>
+                            <td>Delhi</td>
+                            <td>Government (Rooftop)</td>
+                            <td>Completed</td>
+                        </tr>
+
+                        <!-- Special & SME Projects -->
+                        <tr>
+                            <td><strong>Modi Rolls Mill</strong></td>
+                            <td class="text-primary">200 KW</td>
+                            <td>Modinagar, Ghaziabad</td>
+                            <td>Industrial</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Solar Car Port (Metro)</strong></td>
+                            <td class="text-primary">150 KW</td>
+                            <td>Bahadurgarh, Delhi</td>
+                            <td>Carport Infrastructure</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>J Mitra</strong></td>
+                            <td class="text-primary">130 KW</td>
+                            <td>Faridabad, Haryana</td>
+                            <td>Industrial</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tata Power</strong></td>
+                            <td class="text-primary">100 KW</td>
+                            <td>Gonda, UP</td>
+                            <td>Utility / Grid</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Canara Bank</strong></td>
+                            <td class="text-primary">70 KW</td>
+                            <td>Multiple Locations</td>
+                            <td>Banking / Commercial</td>
+                            <td>Completed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="partners" style="margin-top: 4rem;">
+        <div class="container reveal-up text-center">
+            <h2 class="section-title">Our <span class="text-primary">Strategic Partners</span></h2>
+            <p style="margin-bottom: 2rem; color: var(--text-muted);">We work with the world's best technology
+                providers.</p>
+
+            <div class="partner-grid">
+                <!-- Text based representation for clean look, or use detailed SVGs if available -->
+                <div class="partner-logo">TATA POWER</div>
+                <div class="partner-logo">ADANI SOLAR</div>
+                <div class="partner-logo">WAAREE</div>
+                <div class="partner-logo">ANXIN (JAKSON)</div>
+                <div class="partner-logo">GROWATT</div>
+                <div class="partner-logo">DEYE</div>
+                <div class="partner-logo">HAVELLS</div>
+                <div class="partner-logo">MICROTEK</div>
+                <div class="partner-logo">VIKRAM SOLAR</div>
+                <div class="partner-logo">LIVGUARD</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                        <img src="images/favicon.png" alt="Shiva Helios" style="height: 40px; width: auto;">
+                        <h4 style="margin:0; font-size: 1.2rem;">SHIVA HELIOS</h4>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                        Leading Solar EPC Company in India. Delivering excellence in Industrial, Commercial,
+                        Utility-scale, and Residential solar projects with 24/7 O&M support.
+                    </p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>📍 803, 8th Floor, ARC Angles,<br>Raj Nagar Ext. Ghaziabad, U.P-201017</p>
+                    <p>📞 +91 8527147331</p>
+                    <p>✉️ shivaheliospowersystem@gmail.com</p>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Quick Links</h4>
+                    <a href="portfolio.html">Our Portfolio</a>
+                    <a href="products.html">Solar Products</a>
+                    <a href="solutions.html">EPC Solutions</a>
+                    <a href="maintenance.html">O&M Services</a>
+                    <a href="contact.html">Get a Quote</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shiva Helios Power System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
