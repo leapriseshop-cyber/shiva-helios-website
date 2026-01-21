@@ -5,8 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact & Booking | Shiva Helios Power System</title>
+    <meta name="description"
+        content="Contact Shiva Helios for Solar EPC quotes. Office in Delhi & Ghaziabad. Book a free site survey today.">
 
-    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/deco/48/sun.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap"
         rel="stylesheet">
@@ -26,110 +28,189 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="solutions.html">Solutions</a></li>
                 <li><a href="products.html">Products</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="maintenance.html">O&M</a></li>
-                <li><a href="contact.html" class="btn-primary active">Get Quote</a></li>
+                <li><a href="contact.html" class="active">Get Quote</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="contact-page">
+    <header class="hero"
+        style="min-height: 60vh; padding-top: 150px; background: radial-gradient(circle at bottom right, rgba(255, 215, 0, 0.05), transparent 60%);">
+        <div class="container text-center">
+            <span class="hero-badge">24/7 Support</span>
+            <h1 class="reveal-up">Get Your <span class="text-gradient">Solar Proposal</span></h1>
+            <p class="reveal-up section-desc">Whether you need a 2.5MW Industrial Plant or a Home System, our engineers
+                are ready to assist.</p>
+        </div>
+    </header>
+
+    <section class="contact-page" style="padding-top: 0;">
         <div class="container reveal-up">
-            <div class="contact-wrapper no-grid-mobile">
+            <div class="contact-wrapper">
                 <!-- Smart Form -->
                 <div class="smart-form-container">
                     <div class="form-header">
-                        <h2>Smart Booking <span>Assistant</span></h2>
-                        <p>Tell us a bit about your needs, and our AI will suggest the best package.</p>
+                        <h2 style="font-family: var(--font-heading); margin-bottom: 0.5rem;">Cost Estimator & <span
+                                class="text-primary">Booking</span></h2>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Fill this form and our AI will instantly
+                            suggest the best system for you.</p>
                     </div>
 
                     <form id="bookingForm" class="contact-form" action="mailto:shivaheliospowersystem@gmail.com"
                         method="post" enctype="text/plain">
                         <!-- Step 1 -->
                         <div class="form-step" id="step1">
-                            <label>I am looking for solar for:</label>
+                            <label class="text-primary" style="margin-bottom: 1rem; display:block; font-weight:600;">I
+                                am looking for solar for:</label>
                             <div class="options-grid">
                                 <div class="option-card" onclick="selectOption('type', 'Home')">
-                                    <span>🏠</span> Home
+                                    <span style="font-size: 2rem; display:block; margin-bottom: 0.5rem;">🏠</span> Home
                                 </div>
                                 <div class="option-card" onclick="selectOption('type', 'Industry')">
-                                    <span>🏭</span> Factory/Industry
+                                    <span style="font-size: 2rem; display:block; margin-bottom: 0.5rem;">🏭</span>
+                                    Industry
                                 </div>
                                 <div class="option-card" onclick="selectOption('type', 'Office')">
-                                    <span>🏢</span> Commercial Office
+                                    <span style="font-size: 2rem; display:block; margin-bottom: 0.5rem;">🏢</span>
+                                    Office
                                 </div>
                             </div>
                             <input type="hidden" id="custType" name="Customer_Type">
                         </div>
 
-                        <!-- Step 2 (Dynamic) -->
+                        <!-- Step 2 -->
                         <div class="form-step hidden" id="step2">
-                            <label>Approximate Monthly Bill:</label>
+                            <label class="text-primary"
+                                style="margin-bottom: 1rem; display:block; font-weight:600;">Approximate Monthly
+                                Bill:</label>
                             <div class="options-grid">
-                                <div class="option-card" onclick="selectOption('bill', 'Low')">
-                                    &lt; ₹5,000
-                                </div>
-                                <div class="option-card" onclick="selectOption('bill', 'Medium')">
-                                    ₹5k - ₹50k
-                                </div>
-                                <div class="option-card" onclick="selectOption('bill', 'High')">
-                                    &gt; ₹50,000
-                                </div>
+                                <div class="option-card" onclick="selectOption('bill', 'Low')"> &lt; ₹5,000 </div>
+                                <div class="option-card" onclick="selectOption('bill', 'Medium')"> ₹5k - ₹50k </div>
+                                <div class="option-card" onclick="selectOption('bill', 'High')"> &gt; ₹50,000 </div>
                             </div>
                             <input type="hidden" id="custBill" name="Bill_Range">
                         </div>
 
-                        <!-- Step 3: AI Suggestion & Contact -->
+                        <!-- Step 3 -->
                         <div class="form-step hidden" id="step3">
-                            <div class="ai-suggestion" id="aiSuggestion">
-                                <!-- JS injscts suggestion here -->
-                            </div>
-
+                            <div class="ai-suggestion" id="aiSuggestion"></div>
                             <div class="input-group">
-                                <input type="text" name="name" placeholder="Your Name" required>
-                                <input type="tel" name="phone" placeholder="Phone Number" required>
-                                <input type="email" name="email" placeholder="Email" required>
-                                <textarea name="message" placeholder="Additional Details..."></textarea>
+                                <input type="text" name="name" placeholder="Your Name" required
+                                    style="width: 100%; padding: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 10px; margin-bottom: 1rem;">
+                                <input type="tel" name="phone" placeholder="Phone Number" required
+                                    style="width: 100%; padding: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 10px; margin-bottom: 1rem;">
+                                <textarea name="message" placeholder="Any specific requirements?" rows="3"
+                                    style="width: 100%; padding: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 10px; margin-bottom: 1rem;"></textarea>
                             </div>
-                            <button type="submit" class="btn-primary" style="width:100%">Book Site Visit</button>
+                            <button type="submit" class="btn btn-primary" style="width:100%">Confirm Site Visit</button>
                         </div>
                     </form>
                 </div>
 
-                <!-- Info Side -->
-                <div class="contact-methods-side">
-                    <h3>Direct Connect</h3>
-                    <div class="method-row">
-                        <img src="https://img.icons8.com/color/48/phone.png" alt="Call">
-                        <div>
-                            <strong>Call Us</strong>
-                            <p>+91 85271 47331</p>
-                            <p>+91 93156 75571</p>
+                <!-- Contact Info -->
+                <div class="contact-info-card">
+                    <h3 style="font-family: var(--font-heading); margin-bottom: 2rem;">Contact Details</h3>
+
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <h4>Headquarters</h4>
+                            <p>803, 8th Floor, ARC Angels</p>
+                            <p>Raj Nagar Extension, Ghaziabad</p>
+                            <p>Delhi NCR, India</p>
                         </div>
                     </div>
-                    <div class="method-row">
-                        <img src="https://img.icons8.com/color/48/gmail.png" alt="Email">
-                        <div>
-                            <strong>Email</strong>
+
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-content">
+                            <h4>Phone Support</h4>
+                            <p>+91 85271 47331</p>
+                            <p>+91 93156 75571</p>
+                            <p style="font-size: 0.8rem; color: var(--primary);">Mon-Sat: 9:00 AM - 7:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📧</div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p>shivaheliospowersystem@gmail.com</p>
                             <p>shivaheliospowersystem@gmail.com</p>
                         </div>
                     </div>
-                    <div class="method-row">
-                        <img src="https://img.icons8.com/color/48/marker.png" alt="Loc">
-                        <div>
-                            <strong>Visit HQ</strong>
-                            <p>Delhi & Ghaziabad (NCR)</p>
-                            <p style="font-size: 0.8rem; margin-top: 0.2rem;">Raj Nagar Ext, Ghaziabad</p>
-                        </div>
+
+                    <!-- Embedded Map -->
+                    <iframe class="map-frame"
+                        src="https://maps.google.com/maps?q=Raj+Nagar+Extension+Ghaziabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        allowfullscreen></iframe>
+
+                    <div class="social-links">
+                        <a href="#" class="social-btn">FB</a>
+                        <a href="#" class="social-btn">IN</a>
+                        <a href="#" class="social-btn">WA</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container reveal-up">
+            <h2 class="section-title">Common <span class="text-primary">Questions</span></h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How much maintenance is needed?</h4>
+                    <p>Very little. Solar panels are distinctively robust. A bi-weekly cleaning is usually sufficient,
+                        which our O&M team can handle for you.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What is the warranty period?</h4>
+                    <p>We provide a 25-year performance warranty on panels and a 5-10 year warranty on inverters. Our
+                        structures are guaranteed for 25 years.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can I run ACs on solar?</h4>
+                    <p>Absolutely. A 3kW-5kW system is typically enough to run a standard home AC setup during the day.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                        <img src="images/favicon.png" alt="Shiva Helios" style="height: 40px; width: auto;">
+                        <h4 style="margin:0; font-size: 1.2rem;">SHIVA HELIOS</h4>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                        Leading Solar EPC Company in India. Delivering excellence in Industrial, Commercial,
+                        Utility-scale, and Residential solar projects with 24/7 O&M support.
+                    </p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>📍 803, 8th Floor, ARC Angles,<br>Raj Nagar Ext. Ghaziabad, U.P-201017</p>
+                    <p>📞 +91 8527147331</p>
+                    <p>✉️ shivaheliospowersystem@gmail.com</p>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Quick Links</h4>
+                    <a href="portfolio.html">Our Portfolio</a>
+                    <a href="products.html">Solar Products</a>
+                    <a href="solutions.html">EPC Solutions</a>
+                    <a href="maintenance.html">O&M Services</a>
+                    <a href="contact.html">Get a Quote</a>
+                </div>
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Shiva Helios Power System.</p>
+                <p>&copy; 2024 Shiva Helios Power System. All rights reserved.</p>
             </div>
         </div>
     </footer>
