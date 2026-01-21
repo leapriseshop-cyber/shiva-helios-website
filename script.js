@@ -105,3 +105,9 @@ window.addEventListener('load', () => {
         setTimeout(() => pre.style.display = 'none', 500);
     }
 });
+
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+window.toggleMenu = toggleMenu;
