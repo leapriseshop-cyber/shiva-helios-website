@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact & Booking | Shiva Helios Power System</title>
+
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/deco/48/sun.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">☀️</span>
+                <div>SHIVA <span>HELIOS</span></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="maintenance.html">O&M</a></li>
+                <li><a href="contact.html" class="btn-primary active">Get Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="contact-page">
+        <div class="container reveal-up">
+            <div class="contact-wrapper no-grid-mobile">
+                <!-- Smart Form -->
+                <div class="smart-form-container">
+                    <div class="form-header">
+                        <h2>Smart Booking <span>Assistant</span></h2>
+                        <p>Tell us a bit about your needs, and our AI will suggest the best package.</p>
+                    </div>
+
+                    <form id="bookingForm" class="contact-form" action="mailto:shivaheliospowersystem@gmail.com"
+                        method="post" enctype="text/plain">
+                        <!-- Step 1 -->
+                        <div class="form-step" id="step1">
+                            <label>I am looking for solar for:</label>
+                            <div class="options-grid">
+                                <div class="option-card" onclick="selectOption('type', 'Home')">
+                                    <span>🏠</span> Home
+                                </div>
+                                <div class="option-card" onclick="selectOption('type', 'Industry')">
+                                    <span>🏭</span> Factory/Industry
+                                </div>
+                                <div class="option-card" onclick="selectOption('type', 'Office')">
+                                    <span>🏢</span> Commercial Office
+                                </div>
+                            </div>
+                            <input type="hidden" id="custType" name="Customer_Type">
+                        </div>
+
+                        <!-- Step 2 (Dynamic) -->
+                        <div class="form-step hidden" id="step2">
+                            <label>Approximate Monthly Bill:</label>
+                            <div class="options-grid">
+                                <div class="option-card" onclick="selectOption('bill', 'Low')">
+                                    &lt; ₹5,000
+                                </div>
+                                <div class="option-card" onclick="selectOption('bill', 'Medium')">
+                                    ₹5k - ₹50k
+                                </div>
+                                <div class="option-card" onclick="selectOption('bill', 'High')">
+                                    &gt; ₹50,000
+                                </div>
+                            </div>
+                            <input type="hidden" id="custBill" name="Bill_Range">
+                        </div>
+
+                        <!-- Step 3: AI Suggestion & Contact -->
+                        <div class="form-step hidden" id="step3">
+                            <div class="ai-suggestion" id="aiSuggestion">
+                                <!-- JS injscts suggestion here -->
+                            </div>
+
+                            <div class="input-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                                <input type="tel" name="phone" placeholder="Phone Number" required>
+                                <input type="email" name="email" placeholder="Email" required>
+                                <textarea name="message" placeholder="Additional Details..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary" style="width:100%">Book Site Visit</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Info Side -->
+                <div class="contact-methods-side">
+                    <h3>Direct Connect</h3>
+                    <div class="method-row">
+                        <img src="https://img.icons8.com/color/48/phone.png" alt="Call">
+                        <div>
+                            <strong>Call Us</strong>
+                            <p>+91 85271 47331</p>
+                            <p>+91 93156 75571</p>
+                        </div>
+                    </div>
+                    <div class="method-row">
+                        <img src="https://img.icons8.com/color/48/gmail.png" alt="Email">
+                        <div>
+                            <strong>Email</strong>
+                            <p>shivaheliospowersystem@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="method-row">
+                        <img src="https://img.icons8.com/color/48/marker.png" alt="Loc">
+                        <div>
+                            <strong>Visit HQ</strong>
+                            <p>Delhi & Ghaziabad (NCR)</p>
+                            <p style="font-size: 0.8rem; margin-top: 0.2rem;">Raj Nagar Ext, Ghaziabad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shiva Helios Power System.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
