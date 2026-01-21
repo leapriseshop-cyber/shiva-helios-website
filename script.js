@@ -1,116 +1,107 @@
-// 1. Preloader
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    preloader.classList.add('hide');
-    // Remove from DOM after transition
-    setTimeout(() => {
-        preloader.style.display = 'none';
-    }, 500);
-});
-
-// 2. Scroll Effect for Navbar
-window.addEventListener('scroll', () => {
-    const nav = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-});
-
-// 3. Reveal Animation Logic (Intersection Observer)
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-};
-
+// Animation Observer
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
-
-            // Check if it's a stats container
-            if (entry.target.querySelector('.counter')) {
-                startCounters(entry.target);
-            }
-
-            observer.unobserve(entry.target);
         }
     });
-}, observerOptions);
-
-document.querySelectorAll('.reveal-up').forEach((el) => {
-    observer.observe(el);
 });
+document.querySelectorAll('.reveal-up').forEach((el) => observer.observe(el));
 
-// 4. Number Counter Animation
-function startCounters(container) {
-    const counters = container.querySelectorAll('.counter');
-    const speed = 200; // The lower the slower
+// ROI Calculator (Home Page)
+const billRange = document.getElementById('billRange');
+if (billRange) {
+    billRange.addEventListener('input', function () {
+        // Validation
+        let bill = parseInt(this.value);
+        document.getElementById('billVal').innerText = bill.toLocaleString();
 
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
+        // Logic: Annual Savings = (Monthly Bill * 12) * 0.90 (90% offset)
+        let annual = (bill * 12) * 0.9;
+        let fiveYear = annual * 5;
 
-            // Lower inc to make it slower
-            const inc = target / speed;
-
-            if (count < target) {
-                // Add inc to count and output in counter
-                counter.innerText = Math.ceil(count + inc);
-                // Call function every ms
-                setTimeout(updateCount, 15);
-            } else {
-                counter.innerText = target;
-            }
-        };
-        updateCount();
+        document.getElementById('annualSave').innerText = Math.round(annual).toLocaleString();
+        document.getElementById('fiveYearSave').innerText = Math.round(fiveYear).toLocaleString();
     });
 }
 
-// 5. 3D Tilt Effect
-document.querySelectorAll('.tilt-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+// Smart Contact Form Logic
+let userSelection = { type: '', bill: '' };
 
-        // Calculate center
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
+function selectOption(category, value) {
+    userSelection[category] = value;
 
-        // Calculate tilt
-        const rotateX = ((y - centerY) / centerY) * -10; // Max 10deg rotation
-        const rotateY = ((x - centerX) / centerX) * 10;
+    // UI Update
+    // Find options in current step
+    let currentStepId = category === 'type' ? 'step1' : 'step2';
+    document.querySelectorAll(`#${currentStepId} .option-card`).forEach(el => el.classList.remove('selected'));
+    event.currentTarget.classList.add('selected');
 
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-    });
+    // Store in hidden input
+    if (category === 'type') document.getElementById('custType').value = value;
+    if (category === 'bill') document.getElementById('custBill').value = value;
 
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-    });
-});
-
-// 6. Smooth Scroll for Navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
-            this.classList.add('active');
+    // Transition
+    setTimeout(() => {
+        if (category === 'type') {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+        } else if (category === 'bill') {
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step3').classList.remove('hidden');
+            generateSuggestion();
         }
-    });
-});
+    }, 400);
+}
 
-// 7. WhatsApp Chat Widget Toggle
-function toggleChat() {
+function generateSuggestion() {
+    const suggestionBox = document.getElementById('aiSuggestion');
+    let msg = "";
+
+    if (userSelection.type === 'Industry') {
+        msg = "<strong>🤖 AI Recommendation:</strong> For Industrial power bills of this range, we recommend our <strong>Captive Open Access</strong> or <strong>EPC MW Scale</strong> solution. You can save up to 40% on tariff immediately.";
+    } else if (userSelection.type === 'Home') {
+        msg = "<strong>🤖 AI Recommendation:</strong> For your home, a <strong>5kW - 10kW On-Grid System</strong> with net metering would be perfect. It will likely eliminate 90% of your bill.";
+    } else {
+        msg = "<strong>🤖 AI Recommendation:</strong> For offices, we suggest a <strong>Genset-Sync Solar System</strong> to reduce diesel costs during outages.";
+    }
+
+    // Typewriter effect for expert feel
+    suggestionBox.innerHTML = '';
+    let i = 0;
+    const typeWriter = () => {
+        if (i < msg.length) {
+            suggestionBox.innerHTML += msg.charAt(i);
+            i++;
+            setTimeout(typeWriter, 20); // Speed of typing
+        }
+    };
+
+    // Convert HTML string to text for typing (simplified for demo, or just fade in)
+    // Actually, typing HTML tags is messy. Let's do a Fade In effect instead for reliable "Expert" feel.
+    suggestionBox.innerHTML = msg;
+    suggestionBox.style.opacity = '0';
+    suggestionBox.style.transform = 'translateY(10px)';
+    suggestionBox.style.transition = 'all 0.5s ease';
+
+    setTimeout(() => {
+        suggestionBox.style.opacity = '1';
+        suggestionBox.style.transform = 'translateY(0)';
+    }, 100);
+}
+
+// Make selectOption global
+window.selectOption = selectOption;
+window.toggleChat = function () {
     const chatBox = document.getElementById('chatBox');
-    chatBox.classList.toggle('open');
+    if (chatBox) chatBox.classList.toggle('open');
 }
 
-window.toggleChat = toggleChat; // Expose to global scope
+// Preloader (if exists)
+window.addEventListener('load', () => {
+    const pre = document.getElementById('preloader');
+    if (pre) {
+        pre.style.opacity = '0';
+        setTimeout(() => pre.style.display = 'none', 500);
+    }
+});
