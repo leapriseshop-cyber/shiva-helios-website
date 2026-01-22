@@ -21,8 +21,9 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="favicon.png" alt="Shiva Helios Logo">
-                <span>SHIVA HELIOS</span>
+                <img src="favicon.png" alt="Shiva Helios Power System Logo">
+                <span>SHIVA HELIOS<br><small style="font-size: 0.65rem; letter-spacing: 2px;">POWER
+                        SYSTEM</small></span>
             </a>
             <div class="hamburger" onclick="toggleMenu()">☰</div>
             <ul class="nav-links">
@@ -31,13 +32,16 @@
                 <li><a href="products.html">Products</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="maintenance.html">O&M</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html" class="active">Get Quote</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero"
-        style="min-height: 60vh; padding-top: 150px; background: radial-gradient(circle at bottom right, rgba(255, 215, 0, 0.05), transparent 60%);">
+
+    <!-- Hero Section with Background -->
+    <header class="contact-hero">
+        <div class="contact-hero-bg"></div>
         <div class="container text-center">
             <span class="hero-badge">24/7 Support</span>
             <h1 class="reveal-up">Get Your <span class="text-gradient">Solar Proposal</span></h1>
@@ -58,23 +62,32 @@
                             suggest the best system for you.</p>
                     </div>
 
-                    <form id="bookingForm" class="contact-form" action="mailto:shivaheliospowersystem@gmail.com"
-                        method="post" enctype="text/plain">
+                    <form id="bookingForm" class="contact-form" onsubmit="return handleFormSubmit(event)">
                         <!-- Step 1 -->
                         <div class="form-step" id="step1">
                             <label class="text-primary" style="margin-bottom: 1rem; display:block; font-weight:600;">I
                                 am looking for solar for:</label>
                             <div class="options-grid">
                                 <div class="option-card" onclick="selectOption('type', 'Home')">
-                                    <span style="font-size: 2rem; display:block; margin-bottom: 0.5rem;">🏠</span> Home
+                                    <span style="font-size: 2.5rem; display:block; margin-bottom: 0.5rem;">🏠</span>
+                                    <strong>Home</strong>
+                                    <p
+                                        style="font-size: 0.8rem; margin-top: 0.3rem; color: var(--text-muted); margin-bottom: 0;">
+                                        Residential Solar</p>
                                 </div>
                                 <div class="option-card" onclick="selectOption('type', 'Industry')">
-                                    <span style="font-size: 2rem; display:block; margin-bottom: 0.5rem;">🏭</span>
-                                    Industry
+                                    <span style="font-size: 2.5rem; display:block; margin-bottom: 0.5rem;">🏭</span>
+                                    <strong>Industry</strong>
+                                    <p
+                                        style="font-size: 0.8rem; margin-top: 0.3rem; color: var(--text-muted); margin-bottom: 0;">
+                                        MW Scale</p>
                                 </div>
                                 <div class="option-card" onclick="selectOption('type', 'Office')">
-                                    <span style="font-size: 2rem; display:block; margin-bottom: 0.5rem;">🏢</span>
-                                    Office
+                                    <span style="font-size: 2.5rem; display:block; margin-bottom: 0.5rem;">🏢</span>
+                                    <strong>Office</strong>
+                                    <p
+                                        style="font-size: 0.8rem; margin-top: 0.3rem; color: var(--text-muted); margin-bottom: 0;">
+                                        Commercial</p>
                                 </div>
                             </div>
                             <input type="hidden" id="custType" name="Customer_Type">
@@ -86,9 +99,27 @@
                                 style="margin-bottom: 1rem; display:block; font-weight:600;">Approximate Monthly
                                 Bill:</label>
                             <div class="options-grid">
-                                <div class="option-card" onclick="selectOption('bill', 'Low')"> &lt; ₹5,000 </div>
-                                <div class="option-card" onclick="selectOption('bill', 'Medium')"> ₹5k - ₹50k </div>
-                                <div class="option-card" onclick="selectOption('bill', 'High')"> &gt; ₹50,000 </div>
+                                <div class="option-card" onclick="selectOption('bill', 'Low')">
+                                    <span style="font-size: 2rem; display:block; margin-bottom: 0.5rem;">💡</span>
+                                    <strong>&lt; ₹5,000</strong>
+                                    <p
+                                        style="font-size: 0.8rem; margin-top: 0.3rem; color: var(--text-muted); margin-bottom: 0;">
+                                        Small</p>
+                                </div>
+                                <div class="option-card" onclick="selectOption('bill', 'Medium')">
+                                    <span style="font-size: 2rem; display:block; margin-bottom: 0.5rem;">⚡</span>
+                                    <strong>₹5k - ₹50k</strong>
+                                    <p
+                                        style="font-size: 0.8rem; margin-top: 0.3rem; color: var(--text-muted); margin-bottom: 0;">
+                                        Medium</p>
+                                </div>
+                                <div class="option-card" onclick="selectOption('bill', 'High')">
+                                    <span style="font-size: 2rem; display:block; margin-bottom: 0.5rem;">⚡⚡</span>
+                                    <strong>&gt; ₹50,000</strong>
+                                    <p
+                                        style="font-size: 0.8rem; margin-top: 0.3rem; color: var(--text-muted); margin-bottom: 0;">
+                                        Large</p>
+                                </div>
                             </div>
                             <input type="hidden" id="custBill" name="Bill_Range">
                         </div>
@@ -97,14 +128,24 @@
                         <div class="form-step hidden" id="step3">
                             <div class="ai-suggestion" id="aiSuggestion"></div>
                             <div class="input-group">
-                                <input type="text" name="name" placeholder="Your Name" required
+                                <input type="text" name="name" id="custName" placeholder="Your Name" required
                                     style="width: 100%; padding: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 10px; margin-bottom: 1rem;">
-                                <input type="tel" name="phone" placeholder="Phone Number" required
+                                <input type="tel" name="phone" id="custPhone" placeholder="Phone Number" required
+                                    pattern="[0-9]{10}"
                                     style="width: 100%; padding: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 10px; margin-bottom: 1rem;">
-                                <textarea name="message" placeholder="Any specific requirements?" rows="3"
+                                <input type="email" name="email" id="custEmail" placeholder="Email Address (optional)"
+                                    style="width: 100%; padding: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 10px; margin-bottom: 1rem;">
+                                <textarea name="message" id="custMessage" placeholder="Any specific requirements?"
+                                    rows="3"
                                     style="width: 100%; padding: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 10px; margin-bottom: 1rem;"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary" style="width:100%">Confirm Site Visit</button>
+                            <button type="submit" class="btn btn-primary" style="width:100%">
+                                <i class="fas fa-paper-plane"></i> Send Inquiry
+                            </button>
+                            <p
+                                style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; text-align: center;">
+                                Your inquiry will be sent via WhatsApp to our team
+                            </p>
                         </div>
                     </form>
                 </div>
@@ -138,7 +179,7 @@
                         <div class="info-content">
                             <h4>Email</h4>
                             <p>shivaheliospowersystem@gmail.com</p>
-                            <p>shivaheliospowersystem@gmail.com</p>
+                            <p style="margin-left: 1.5rem;">srivastavasaurabh444@gmail.com</p>
                         </div>
                     </div>
 
@@ -187,8 +228,9 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-                        <img src="favicon.png" alt="Shiva Helios" style="height: 40px; width: auto;">
-                        <h4 style="margin:0; font-size: 1.2rem;">SHIVA HELIOS</h4>
+                        <img src="favicon.png" alt="Shiva Helios Power System" style="height: 40px; width: auto;">
+                        <h4 style="margin:0; font-size: 1.2rem;">SHIVA HELIOS<br><small style="font-size: 0.7rem;">POWER
+                                SYSTEM</small></h4>
                     </div>
                     <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
                         Leading Solar EPC Company in India. Delivering excellence in Industrial, Commercial,
@@ -200,6 +242,7 @@
                     <p>📍 803, 8th Floor, ARC Angles,<br>Raj Nagar Ext. Ghaziabad, U.P-201017</p>
                     <p>📞 +91 8527147331</p>
                     <p>✉️ shivaheliospowersystem@gmail.com</p>
+                    <p style="margin-left: 1.5rem;">srivastavasaurabh444@gmail.com</p>
                 </div>
                 <div class="footer-links-col">
                     <h4>Quick Links</h4>
@@ -215,6 +258,28 @@
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Chatbot -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/918527147331?text=Hi%20Shiva%20Helios,%20I'm%20interested%20in%20your%20solar%20solutions"
+            target="_blank" class="whatsapp-btn" title="Chat with us on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Social Media Float -->
+    <div class="social-float">
+        <a href="#" class="facebook" title="Follow us on Facebook" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="instagram" title="Follow us on Instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="linkedin" title="Connect on LinkedIn" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
