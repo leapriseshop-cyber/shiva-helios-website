@@ -21,8 +21,9 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="favicon.png" alt="Shiva Helios Logo">
-                <span>SHIVA HELIOS</span>
+                <img src="favicon.png" alt="Shiva Helios Power System Logo">
+                <span>SHIVA HELIOS<br><small style="font-size: 0.65rem; letter-spacing: 2px;">POWER
+                        SYSTEM</small></span>
             </a>
             <div class="hamburger" onclick="toggleMenu()">☰</div>
             <ul class="nav-links">
@@ -31,6 +32,7 @@
                 <li><a href="products.html">Products</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="maintenance.html">O&M</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html" class="btn-primary">Get Quote</a></li>
             </ul>
         </div>
@@ -86,25 +88,38 @@
             <h2 class="section-title reveal-up">Project <span>Case Studies</span></h2>
 
             <!-- Case Study 1 -->
-            <div class="case-card reveal-up">
-                <div class="case-header">
-                    <h3>Nalwa Steel Ltd</h3>
-                    <span class="badge">2,500 KW</span>
+            <!-- Case Studies Grid -->
+            <div class="grid">
+                <!-- Case Study 1 -->
+                <div class="card reveal-up">
+                    <div class="case-header"
+                        style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+                        <h3 style="margin:0;">Nalwa Steel Ltd</h3>
+                        <span class="hero-badge" style="margin:0; padding: 4px 12px; font-size: 0.8rem;">2.5 MW</span>
+                    </div>
+                    <hr style="border: 1px solid rgba(255,255,255,0.1); margin-bottom: 1rem;">
+                    <p style="margin-bottom:0.5rem;"><strong class="text-primary">Challenge:</strong> High energy
+                        consumption in steel manufacturing.</p>
+                    <p style="margin-bottom:0.5rem;"><strong class="text-primary">Solution:</strong> A 2.5 MW Captive
+                        Solar Plant with synchronized load management.</p>
+                    <p><strong class="text-primary">Result:</strong> 30% reduction in energy bills annually.</p>
                 </div>
-                <p><strong>Challenge:</strong> High energy consumption in steel manufacturing.</p>
-                <p><strong>Solution:</strong> A 2.5 MW Captive Solar Plant with synchronized load management.</p>
-                <p><strong>Result:</strong> 30% reduction in energy bills annually.</p>
-            </div>
 
-            <!-- Case Study 2 -->
-            <div class="case-card reveal-up">
-                <div class="case-header">
-                    <h3>Indian Railways (NFR)</h3>
-                    <span class="badge">600 KW</span>
+                <!-- Case Study 2 -->
+                <div class="card reveal-up">
+                    <div class="case-header"
+                        style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+                        <h3 style="margin:0;">Indian Railways (NFR)</h3>
+                        <span class="hero-badge" style="margin:0; padding: 4px 12px; font-size: 0.8rem;">600 KW</span>
+                    </div>
+                    <hr style="border: 1px solid rgba(255,255,255,0.1); margin-bottom: 1rem;">
+                    <p style="margin-bottom:0.5rem;"><strong class="text-primary">Challenge:</strong> Reliable power for
+                        station operations in Guwahati.</p>
+                    <p style="margin-bottom:0.5rem;"><strong class="text-primary">Solution:</strong> Rooftop solar
+                        integration with existing grid infrastructure.</p>
+                    <p><strong class="text-primary">Result:</strong> Green Station certification and carbon footprint
+                        reduction.</p>
                 </div>
-                <p><strong>Challenge:</strong> Reliable power for station operations in Guwahati.</p>
-                <p><strong>Solution:</strong> Rooftop solar integration with existing grid infrastructure.</p>
-                <p><strong>Result:</strong> Green Station certification and carbon footprint reduction.</p>
             </div>
         </div>
     </section>
@@ -126,41 +141,63 @@
     </section>
 
     <footer class="footer">
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-brand">
-                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-                            <img src="favicon.png" alt="Shiva Helios" style="height: 40px; width: auto;">
-                            <h4 style="margin:0; font-size: 1.2rem;">SHIVA HELIOS</h4>
-                        </div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
-                            Leading Solar EPC Company in India. Delivering excellence in Industrial, Commercial,
-                            Utility-scale, and Residential solar projects with 24/7 O&M support.
-                        </p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+                        <img src="favicon.png" alt="Shiva Helios Power System" style="height: 40px; width: auto;">
+                        <h4 style="margin:0; font-size: 1.2rem;">SHIVA HELIOS<br><small style="font-size: 0.7rem;">POWER
+                                SYSTEM</small></h4>
                     </div>
-                    <div class="footer-contact">
-                        <h4>Contact Us</h4>
-                        <p>📍 803, 8th Floor, ARC Angles,<br>Raj Nagar Ext. Ghaziabad, U.P-201017</p>
-                        <p>📞 +91 8527147331</p>
-                        <p>✉️ shivaheliospowersystem@gmail.com</p>
-                    </div>
-                    <div class="footer-links-col">
-                        <h4>Quick Links</h4>
-                        <a href="portfolio.html">Our Portfolio</a>
-                        <a href="products.html">Solar Products</a>
-                        <a href="solutions.html">EPC Solutions</a>
-                        <a href="maintenance.html">O&M Services</a>
-                        <a href="contact.html">Get a Quote</a>
-                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                        Leading Solar EPC Company in India. Delivering excellence in Industrial, Commercial,
+                        Utility-scale, and Residential solar projects with 24/7 O&M support.
+                    </p>
                 </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2024 Shiva Helios Power System. All rights reserved.</p>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>📍 803, 8th Floor, ARC Angles,<br>Raj Nagar Ext. Ghaziabad, U.P-201017</p>
+                    <p>📞 +91 8527147331</p>
+                    <p>✉️ shivaheliospowersystem@gmail.com</p>
+                    <p style="margin-left: 1.5rem;">srivastavasaurabh444@gmail.com</p>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Quick Links</h4>
+                    <a href="portfolio.html">Our Portfolio</a>
+                    <a href="products.html">Solar Products</a>
+                    <a href="solutions.html">EPC Solutions</a>
+                    <a href="maintenance.html">O&M Services</a>
+                    <a href="contact.html">Get a Quote</a>
                 </div>
             </div>
-        </footer>
-        <script src="script.js"></script>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shiva Helios Power System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Chatbot -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/918527147331?text=Hi%20Shiva%20Helios,%20I'm%20interested%20in%20your%20solar%20solutions"
+            target="_blank" class="whatsapp-btn" title="Chat with us on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Social Media Float -->
+    <div class="social-float">
+        <a href="#" class="facebook" title="Follow us on Facebook" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="instagram" title="Follow us on Instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="linkedin" title="Connect on LinkedIn" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
