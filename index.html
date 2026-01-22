@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -16,7 +14,7 @@
     <link rel="canonical" href="https://www.shivahelios.com/">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="./favicon.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,6 +25,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -35,9 +34,12 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="images/favicon.png" alt="Shiva Helios Logo">
+                <img src="./images/favicon.png" alt="Shiva Helios Logo">
                 <span>SHIVA HELIOS</span>
             </a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="solutions.html">Solutions</a></li>
@@ -46,12 +48,147 @@
                 <li><a href="maintenance.html">O&M</a></li>
                 <li><a href="contact.html" class="btn btn-primary" style="color: black;">Get Quote</a></li>
             </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
         </div>
     </nav>
-    <!-- ... (rest of body) ... -->
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg-image"
+            style="background: url('./images/hero_bg.png') center/cover no-repeat; position: absolute; top:0; left:0; width: 100%; height: 100%; z-index: 1; filter: brightness(0.4);">
+        </div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="hero-content reveal-up">
+                <span class="hero-badge">🏆 Trusted by Indian Railways & NIA</span>
+                <h1>Powering India's Future with <span class="text-gradient">Solar Excellence</span></h1>
+                <p>We engineer energy independence. From 2.5MW Industrial Plants to Premium Residential Rooftops, we
+                    deliver 25 years of guaranteed power.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="#calculator" class="btn btn-primary">Calculate Savings</a>
+                    <a href="solutions.html" class="btn btn-secondary" style="margin-left: 1rem;">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trust Bar -->
+    <div style="background: #020617; padding: 2rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container text-center">
+            <p style="color: var(--text-muted); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 1.5rem;">TRUSTED
+                BY INDUSTRY LEADERS</p>
+            <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; opacity: 0.7;">
+                <h3 style="color: white; font-family: var(--font-heading);">Indian Railways</h3>
+                <h3 style="color: white; font-family: var(--font-heading);">NIA</h3>
+                <h3 style="color: white; font-family: var(--font-heading);">Indian Oil</h3>
+                <h3 style="color: white; font-family: var(--font-heading);">Nalwa Steel</h3>
+                <h3 style="color: white; font-family: var(--font-heading);">RK Marble</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="grid" style="align-items: center; gap: 4rem;">
+                <div class="reveal-up">
+                    <img src="./images/about_us.png" alt="Our Engineers"
+                        style="border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                </div>
+                <div class="reveal-up">
+                    <span class="text-primary"
+                        style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Why
+                        Choose Us</span>
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Engineering Quality that
+                        Lasts <span class="text-primary">25 Years</span></h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Unlike typical installers, Shiva Helios
+                        is an Engineering-First company. We manufacture our own mounting structures to withstand Indian
+                        weather conditions and design custom electrical layouts for maximum generation.</p>
+
+                    <ul style="display: grid; gap: 1rem; margin-bottom: 2rem;">
+                        <li style="display: flex; gap: 1rem; align-items: center;">
+                            <span style="color: var(--secondary);">✓</span> 33KV Substation Expertise
+                        </li>
+                        <li style="display: flex; gap: 1rem; align-items: center;">
+                            <span style="color: var(--secondary);">✓</span> In-House Structure Manufacturing
+                        </li>
+                        <li style="display: flex; gap: 1rem; align-items: center;">
+                            <span style="color: var(--secondary);">✓</span> 24/7 AI-Monitoring Support
+                        </li>
+                    </ul>
+                    <a href="about.html" class="btn btn-secondary">More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services" style="background: rgba(255,255,255,0.02);">
+        <div class="container">
+            <div class="section-header text-center reveal-up">
+                <h2 class="section-title">Complete <span class="text-primary">Solar Ecosystem</span></h2>
+                <p class="section-desc">From manufacturing structures to commissioning substations, we handle it all.
+                </p>
+            </div>
+            <div class="grid">
+                <div class="card reveal-up">
+                    <div class="icon-box">🏭</div>
+                    <h3>Industrial EPC</h3>
+                    <p>Turnkey solutions for factories & industries. MW scale experts with captive open access
+                        capabilities.</p>
+                </div>
+                <div class="card reveal-up">
+                    <div class="icon-box">🏠</div>
+                    <h3>Premium Residential</h3>
+                    <p>Smart, aesthetic rooftop solar for modern homes. Save 90% on electricity bills.</p>
+                </div>
+                <div class="card reveal-up">
+                    <div class="icon-box">⚡</div>
+                    <h3>33KV Substations</h3>
+                    <p>High-voltage infrastructure expertise for large-scale power evacuation.</p>
+                </div>
+                <div class="card reveal-up">
+                    <div class="icon-box">🛠️</div>
+                    <h3>O&M Services</h3>
+                    <p>Comprehensive Operations & Maintenance with robotic cleaning and thermography.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <div class="calc-container reveal-up">
+                <div class="calc-content">
+                    <h2 class="section-title" style="text-align: left; font-size: 2rem;">Calculate Your <span
+                            class="text-primary">Savings</span></h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">See how much you can save by switching to
+                        solar today.</p>
+
+                    <div class="calc-input-group">
+                        <label>Monthly Power Bill: <span class="text-primary" id="billValDisplay">₹ 5,000</span></label>
+                        <input type="range" id="billRange" min="1000" max="100000" value="5000" step="500">
+                    </div>
+
+                    <div class="calc-results">
+                        <div class="result-card">
+                            <span class="lbl">Annual Savings</span>
+                            <span class="val">₹ <span id="annualSave">54,000</span></span>
+                        </div>
+                        <div class="result-card">
+                            <span class="lbl">5-Year ROI</span>
+                            <span class="val">₹ <span id="fiveYearSave">2,70,000</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calc-cta text-center">
+                    <h3 style="color: white; margin-bottom: 1rem;">Ready to Switch?</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Get a detailed engineering audit for your
+                        site.</p>
+                    <a href="contact.html" class="btn btn-primary" style="width: 100%;">Book Free Site Survey</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -59,7 +196,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-                        <img src="images/favicon.png" alt="Shiva Helios" style="height: 40px; width: auto;">
+                        <img src="./images/favicon.png" alt="Shiva Helios" style="height: 40px; width: auto;">
                         <h4 style="margin:0; font-size: 1.2rem;">SHIVA HELIOS</h4>
                     </div>
                     <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
@@ -88,476 +225,6 @@
         </div>
     </footer>
     <script src="script.js"></script>
-</body>
-
-</html>
-
-<!-- Navigation -->
-<nav class="navbar">
-    <div class="container">
-        <a href="index.html" class="logo">
-            <img src="images/favicon.png" alt="Shiva Helios Logo">
-            <span>SHIVA HELIOS</span>
-        </a>
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="solutions.html">Solutions</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="maintenance.html">O&M</a></li>
-            <li><a href="contact.html" class="btn btn-primary" style="color: black;">Get Quote</a></li>
-        </ul>
-    </div>
-</nav>
-
-<!-- Hero Section -->
-<header class="hero">
-    <div class="hero-bg-image"
-        style="background: url('images/hero_bg.png') center/cover no-repeat; position: absolute; top:0; left:0; width: 100%; height: 100%; z-index: 1; filter: brightness(0.4);">
-    </div>
-    <div class="container" style="position: relative; z-index: 2;">
-        <div class="hero-content reveal-up">
-            <span class="hero-badge">🏆 Trusted by Indian Railways & NIA</span>
-            <h1>Powering India's Future with <span class="text-gradient">Solar Excellence</span></h1>
-            <p>We engineer energy independence. From 2.5MW Industrial Plants to Premium Residential Rooftops, we
-                deliver 25 years of guaranteed power.</p>
-            <div style="margin-top: 2rem;">
-                <a href="#calculator" class="btn btn-primary">Calculate Savings</a>
-                <a href="solutions.html" class="btn btn-secondary" style="margin-left: 1rem;">View Projects</a>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Trust Bar -->
-<div style="background: #020617; padding: 2rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-    <div class="container text-center">
-        <p style="color: var(--text-muted); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 1.5rem;">TRUSTED
-            BY INDUSTRY LEADERS</p>
-        <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; opacity: 0.7;">
-            <h3 style="color: white; font-family: var(--font-heading);">Indian Railways</h3>
-            <h3 style="color: white; font-family: var(--font-heading);">NIA</h3>
-            <h3 style="color: white; font-family: var(--font-heading);">Indian Oil</h3>
-            <h3 style="color: white; font-family: var(--font-heading);">Nalwa Steel</h3>
-            <h3 style="color: white; font-family: var(--font-heading);">RK Marble</h3>
-        </div>
-    </div>
-</div>
-
-<!-- About Section -->
-<section class="about">
-    <div class="container">
-        <div class="grid" style="align-items: center; gap: 4rem;">
-            <div class="reveal-up">
-                <img src="images/about_us.png" alt="Our Engineers"
-                    style="border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
-            </div>
-            <div class="reveal-up">
-                <span class="text-primary" style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Why
-                    Choose Us</span>
-                <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Engineering Quality that
-                    Lasts <span class="text-primary">25 Years</span></h2>
-                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Unlike typical installers, Shiva Helios
-                    is an Engineering-First company. We manufacture our own mounting structures to withstand Indian
-                    weather conditions and design custom electrical layouts for maximum generation.</p>
-
-                <ul style="display: grid; gap: 1rem; margin-bottom: 2rem;">
-                    <li style="display: flex; gap: 1rem; align-items: center;">
-                        <span style="color: var(--secondary);">✓</span> 33KV Substation Expertise
-                    </li>
-                    <li style="display: flex; gap: 1rem; align-items: center;">
-                        <span style="color: var(--secondary);">✓</span> In-House Structure Manufacturing
-                    </li>
-                    <li style="display: flex; gap: 1rem; align-items: center;">
-                        <span style="color: var(--secondary);">✓</span> 24/7 AI-Monitoring Support
-                    </li>
-                </ul>
-                <a href="about.html" class="btn btn-secondary">More About Us</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Services Grid -->
-<section class="services" style="background: rgba(255,255,255,0.02);">
-    <div class="container">
-        <div class="section-header text-center reveal-up">
-            <h2 class="section-title">Complete <span class="text-primary">Solar Ecosystem</span></h2>
-            <p class="section-desc">From manufacturing structures to commissioning substations, we handle it all.
-            </p>
-        </div>
-        <div class="grid">
-            <div class="card reveal-up">
-                <div class="icon-box">🏭</div>
-                <h3>Industrial EPC</h3>
-                <p>Turnkey solutions for factories & industries. MW scale experts with captive open access
-                    capabilities.</p>
-            </div>
-            <div class="card reveal-up">
-                <div class="icon-box">🏠</div>
-                <h3>Premium Residential</h3>
-                <p>Smart, aesthetic rooftop solar for modern homes. Save 90% on electricity bills.</p>
-            </div>
-            <div class="card reveal-up">
-                <div class="icon-box">⚡</div>
-                <h3>33KV Substations</h3>
-                <p>High-voltage infrastructure expertise for large-scale power evacuation.</p>
-            </div>
-            <div class="card reveal-up">
-                <div class="icon-box">🛠️</div>
-                <h3>O&M Services</h3>
-                <p>Comprehensive Operations & Maintenance with robotic cleaning and thermography.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ROI Calculator -->
-<section id="calculator" class="calculator-section">
-    <div class="container">
-        <div class="calc-container reveal-up">
-            <div class="calc-content">
-                <h2 class="section-title" style="text-align: left; font-size: 2rem;">Calculate Your <span
-                        class="text-primary">Savings</span></h2>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">See how much you can save by switching to
-                    solar today.</p>
-
-                <div class="calc-input-group">
-                    <label>Monthly Power Bill: <span class="text-primary" id="billValDisplay">₹ 5,000</span></label>
-                    <input type="range" id="billRange" min="1000" max="100000" value="5000" step="500">
-                </div>
-
-                <div class="calc-results">
-                    <div class="result-card">
-                        <span class="lbl">Annual Savings</span>
-                        <span class="val">₹ <span id="annualSave">54,000</span></span>
-                    </div>
-                    <div class="result-card">
-                        <span class="lbl">5-Year ROI</span>
-                        <span class="val">₹ <span id="fiveYearSave">2,70,000</span></span>
-                    </div>
-                </div>
-            </div>
-            <div class="calc-cta text-center">
-                <h3 style="color: white; margin-bottom: 1rem;">Ready to Switch?</h3>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">Get a detailed engineering audit for your
-                    site.</p>
-                <a href="contact.html" class="btn btn-primary" style="width: 100%;">Book Free Site Survey</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-brand" style="max-width: 300px;">
-                <h4>SHIVA HELIOS</h4>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">India's most trusted solar engineering
-                    company. Empowering industries and homes with clean energy.</p>
-            </div>
-            <div class="footer-links">
-                <h5 style="color: white; margin-bottom: 1.5rem;">Quick Links</h5>
-                <a href="index.html">Home</a>
-                <a href="solutions.html">Solutions</a>
-                <a href="products.html">Products</a>
-            </div>
-            <div class="footer-links">
-                <h5 style="color: white; margin-bottom: 1.5rem;">Contact</h5>
-                <a href="tel:+918527147331">+91 85271 47331</a>
-                <a href="mailto:shivaheliospowersystem@gmail.com">Email Us</a>
-                <a href="#">Delhi NCR, India</a>
-            </div>
-        </div>
-        <div
-            style="border-top: 1px solid rgba(255,255,255,0.05); margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: var(--text-muted); font-size: 0.8rem;">
-            &copy; 2024 Shiva Helios Power System. All rights reserved.
-        </div>
-    </div>
-</footer>
-
-<script src="script.js"></script>
-</body>
-
-</html>
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shiva Helios Power System | Premium Solar EPC Solutions</title>
-
-    <meta name="description"
-        content="Shiva Helios Power System - India's Premier Solar EPC. We deliver 5MW+ Solar Parks, Industrial Rooftops, Carports, and Residential Solar Solutions. Trusted by Nalwa Steel, Indian Oil & NIA.">
-    <meta name="keywords"
-        content="Solar EPC Delhi, Industrial Solar Power Plant, Solar Carport India, Ground Mount Solar Park, Residential Solar Systems, Solar Substation 33KV, Renewable Energy India">
-    <meta name="author" content="Shiva Helios Power System">
-    <link rel="canonical" href="https://www.shivahelios.com/">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <img src="images/favicon.png" alt="Shiva Helios Logo">
-                <span>SHIVA HELIOS</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="solutions.html">Solutions</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="maintenance.html">O&M</a></li>
-                <li><a href="contact.html" class="btn btn-primary" style="color: black;">Get Quote</a></li>
-            </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav>
-    <!-- ... (rest of body) ... -->
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-                        <img src="images/favicon.png" alt="Shiva Helios" style="height: 40px; width: auto;">
-                        <h4 style="margin:0; font-size: 1.2rem;">SHIVA HELIOS</h4>
-                    </div>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
-                        Leading Solar EPC Company in India. Delivering excellence in Industrial, Commercial,
-                        Utility-scale, and Residential solar projects with 24/7 O&M support.
-                    </p>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact Us</h4>
-                    <p>📍 803, 8th Floor, ARC Angles,<br>Raj Nagar Ext. Ghaziabad, U.P-201017</p>
-                    <p>📞 +91 8527147331</p>
-                    <p>✉️ shivaheliospowersystem@gmail.com</p>
-                </div>
-                <div class="footer-links-col">
-                    <h4>Quick Links</h4>
-                    <a href="portfolio.html">Our Portfolio</a>
-                    <a href="products.html">Solar Products</a>
-                    <a href="solutions.html">EPC Solutions</a>
-                    <a href="maintenance.html">O&M Services</a>
-                    <a href="contact.html">Get a Quote</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Shiva Helios Power System. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    <script src="script.js"></script>
-</body>
-
-</html>
-
-<!-- Navigation -->
-<nav class="navbar">
-    <div class="container">
-        <a href="index.html" class="logo">
-            <img src="images/favicon.png" alt="Shiva Helios Logo">
-            <span>SHIVA HELIOS</span>
-        </a>
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="solutions.html">Solutions</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="maintenance.html">O&M</a></li>
-            <li><a href="contact.html" class="btn btn-primary" style="color: black;">Get Quote</a></li>
-        </ul>
-    </div>
-</nav>
-
-<!-- Hero Section -->
-<header class="hero">
-    <div class="hero-bg-image"
-        style="background: url('images/hero_bg.png') center/cover no-repeat; position: absolute; top:0; left:0; width: 100%; height: 100%; z-index: 1; filter: brightness(0.4);">
-    </div>
-    <div class="container" style="position: relative; z-index: 2;">
-        <div class="hero-content reveal-up">
-            <span class="hero-badge">🏆 Trusted by Indian Railways & NIA</span>
-            <h1>Powering India's Future with <span class="text-gradient">Solar Excellence</span></h1>
-            <p>We engineer energy independence. From 2.5MW Industrial Plants to Premium Residential Rooftops, we
-                deliver 25 years of guaranteed power.</p>
-            <div style="margin-top: 2rem;">
-                <a href="#calculator" class="btn btn-primary">Calculate Savings</a>
-                <a href="solutions.html" class="btn btn-secondary" style="margin-left: 1rem;">View Projects</a>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Trust Bar -->
-<div style="background: #020617; padding: 2rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-    <div class="container text-center">
-        <p style="color: var(--text-muted); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 1.5rem;">TRUSTED
-            BY INDUSTRY LEADERS</p>
-        <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; opacity: 0.7;">
-            <h3 style="color: white; font-family: var(--font-heading);">Indian Railways</h3>
-            <h3 style="color: white; font-family: var(--font-heading);">NIA</h3>
-            <h3 style="color: white; font-family: var(--font-heading);">Indian Oil</h3>
-            <h3 style="color: white; font-family: var(--font-heading);">Nalwa Steel</h3>
-            <h3 style="color: white; font-family: var(--font-heading);">RK Marble</h3>
-        </div>
-    </div>
-</div>
-
-<!-- About Section -->
-<section class="about">
-    <div class="container">
-        <div class="grid" style="align-items: center; gap: 4rem;">
-            <div class="reveal-up">
-                <img src="images/about_us.png" alt="Our Engineers"
-                    style="border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
-            </div>
-            <div class="reveal-up">
-                <span class="text-primary" style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Why
-                    Choose Us</span>
-                <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Engineering Quality that
-                    Lasts <span class="text-primary">25 Years</span></h2>
-                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Unlike typical installers, Shiva Helios
-                    is an Engineering-First company. We manufacture our own mounting structures to withstand Indian
-                    weather conditions and design custom electrical layouts for maximum generation.</p>
-
-                <ul style="display: grid; gap: 1rem; margin-bottom: 2rem;">
-                    <li style="display: flex; gap: 1rem; align-items: center;">
-                        <span style="color: var(--secondary);">✓</span> 33KV Substation Expertise
-                    </li>
-                    <li style="display: flex; gap: 1rem; align-items: center;">
-                        <span style="color: var(--secondary);">✓</span> In-House Structure Manufacturing
-                    </li>
-                    <li style="display: flex; gap: 1rem; align-items: center;">
-                        <span style="color: var(--secondary);">✓</span> 24/7 AI-Monitoring Support
-                    </li>
-                </ul>
-                <a href="about.html" class="btn btn-secondary">More About Us</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Services Grid -->
-<section class="services" style="background: rgba(255,255,255,0.02);">
-    <div class="container">
-        <div class="section-header text-center reveal-up">
-            <h2 class="section-title">Complete <span class="text-primary">Solar Ecosystem</span></h2>
-            <p class="section-desc">From manufacturing structures to commissioning substations, we handle it all.
-            </p>
-        </div>
-        <div class="grid">
-            <div class="card reveal-up">
-                <div class="icon-box">🏭</div>
-                <h3>Industrial EPC</h3>
-                <p>Turnkey solutions for factories & industries. MW scale experts with captive open access
-                    capabilities.</p>
-            </div>
-            <div class="card reveal-up">
-                <div class="icon-box">🏠</div>
-                <h3>Premium Residential</h3>
-                <p>Smart, aesthetic rooftop solar for modern homes. Save 90% on electricity bills.</p>
-            </div>
-            <div class="card reveal-up">
-                <div class="icon-box">⚡</div>
-                <h3>33KV Substations</h3>
-                <p>High-voltage infrastructure expertise for large-scale power evacuation.</p>
-            </div>
-            <div class="card reveal-up">
-                <div class="icon-box">🛠️</div>
-                <h3>O&M Services</h3>
-                <p>Comprehensive Operations & Maintenance with robotic cleaning and thermography.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ROI Calculator -->
-<section id="calculator" class="calculator-section">
-    <div class="container">
-        <div class="calc-container reveal-up">
-            <div class="calc-content">
-                <h2 class="section-title" style="text-align: left; font-size: 2rem;">Calculate Your <span
-                        class="text-primary">Savings</span></h2>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">See how much you can save by switching to
-                    solar today.</p>
-
-                <div class="calc-input-group">
-                    <label>Monthly Power Bill: <span class="text-primary" id="billValDisplay">₹ 5,000</span></label>
-                    <input type="range" id="billRange" min="1000" max="100000" value="5000" step="500">
-                </div>
-
-                <div class="calc-results">
-                    <div class="result-card">
-                        <span class="lbl">Annual Savings</span>
-                        <span class="val">₹ <span id="annualSave">54,000</span></span>
-                    </div>
-                    <div class="result-card">
-                        <span class="lbl">5-Year ROI</span>
-                        <span class="val">₹ <span id="fiveYearSave">2,70,000</span></span>
-                    </div>
-                </div>
-            </div>
-            <div class="calc-cta text-center">
-                <h3 style="color: white; margin-bottom: 1rem;">Ready to Switch?</h3>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">Get a detailed engineering audit for your
-                    site.</p>
-                <a href="contact.html" class="btn btn-primary" style="width: 100%;">Book Free Site Survey</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-brand" style="max-width: 300px;">
-                <h4>SHIVA HELIOS</h4>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">India's most trusted solar engineering
-                    company. Empowering industries and homes with clean energy.</p>
-            </div>
-            <div class="footer-links">
-                <h5 style="color: white; margin-bottom: 1.5rem;">Quick Links</h5>
-                <a href="index.html">Home</a>
-                <a href="solutions.html">Solutions</a>
-                <a href="products.html">Products</a>
-            </div>
-            <div class="footer-links">
-                <h5 style="color: white; margin-bottom: 1.5rem;">Contact</h5>
-                <a href="tel:+918527147331">+91 85271 47331</a>
-                <a href="mailto:shivaheliospowersystem@gmail.com">Email Us</a>
-                <a href="#">Delhi NCR, India</a>
-            </div>
-        </div>
-        <div
-            style="border-top: 1px solid rgba(255,255,255,0.05); margin-top: 3rem; padding-top: 1.5rem; text-align: center; color: var(--text-muted); font-size: 0.8rem;">
-            &copy; 2024 Shiva Helios Power System. All rights reserved.
-        </div>
-    </div>
-</footer>
-
-<script src="script.js"></script>
 </body>
 
 </html>
